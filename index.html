@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YouTube URL to MP3 Converter</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to My Heart</h1>
+        <p>lúbim ta miláčik.</p>
+
+        <h2>YouTube URL to MP3 Converter</h2>
+        <input type="text" id="youtubeUrl" placeholder="Enter YouTube URL">
+        <button onclick="convertToMp3()">Convert to MP3</button>
+        <a id="downloadLink" href="#" style="display: none;">Download MP3</a>
+    </div>
+
+    <script>
+        function convertToMp3() {
+            // Get the YouTube URL from the input field
+            var youtubeUrl = document.getElementById("youtubeUrl").value;
+
+            // Perform the conversion logic here
+            // ...
+
+            // Fetch the video title using YouTube Data API
+            fetch(`https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${youtubeUrl}&key=YOUR_API_KEY`)
+                .then(response => response.json())
+                .then(data => {
+                    // Extract the video title from the API response
+                    var videoTitle = data.items[0].snippet.title;
+
+                    // Display the converted MP3 download link
+                    var downloadLink = document.getElementById("downloadLink");
+                    downloadLink.href = "YOUR_CONVERTED_MP3_URL";
+                    downloadLink.style.display = "block";
+                    downloadLink.download = `${videoTitle}.mp3`; // Set the filename for download
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+    </script>
+</body>
+</html>
