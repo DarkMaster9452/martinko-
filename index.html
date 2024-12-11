@@ -6,50 +6,77 @@
     <title>Student Web Page</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #eef2f3;
+            color: #333;
         }
         header {
-            background: #333;
+            background: linear-gradient(90deg, #4caf50, #81c784);
             color: #fff;
-            padding: 10px 0;
+            padding: 20px 0;
             text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         nav {
-            background: #555;
-            color: #fff;
-            padding: 10px;
+            background: #ffffff;
+            color: #333;
+            padding: 15px 0;
             text-align: center;
+            border-bottom: 2px solid #4caf50;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
         nav a {
-            color: #fff;
+            color: #4caf50;
             margin: 0 15px;
             text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #81c784;
         }
         section {
             margin: 20px;
             padding: 20px;
             background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        section h2 {
+            color: #4caf50;
+        }
+        button {
+            padding: 10px 20px;
+            background: #4caf50;
+            color: #fff;
+            border: none;
             border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #81c784;
         }
         footer {
             text-align: center;
             padding: 10px;
-            background: #333;
+            background: #4caf50;
             color: #fff;
             position: fixed;
             bottom: 0;
             width: 100%;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to the Student Page</h1>
+        <h1>Welcome to My Student Page</h1>
     </header>
     <nav>
         <a href="#about">About</a>
@@ -58,7 +85,8 @@
     </nav>
     <section id="about">
         <h2>About</h2>
-        <p>This webpage is dedicated to students for sharing resources and information about their studies and activities.</p>
+        <p>Hello! My name is [Your Name], and I am currently studying at SPSIT in KNM. This webpage is a platform to share resources and updates about my studies and interests.</p>
+        <button onclick="alert('Thank you for visiting my page!')">Click Me</button>
     </section>
     <section id="subjects">
         <h2>Subjects</h2>
@@ -72,10 +100,11 @@
     </section>
     <section id="contact">
         <h2>Contact</h2>
-        <p>If you have any questions, feel free to <a href="mailto:studentpage@example.com">email us</a>.</p>
+        <p>If you have any questions, feel free to <a href="mailto:studentpage@example.com">email me</a>.</p>
+        <button onclick="location.href='mailto:studentpage@example.com'">Send an Email</button>
     </section>
     <footer>
-        <p>&copy; 2024 Student Web Page. All rights reserved.</p>
+        <p>&copy; 2024 My Student Page. All rights reserved.</p>
     </footer>
 </body>
 </html>
