@@ -1,44 +1,81 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>YouTube URL to MP3 Converter</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Web Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            background: #555;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        section {
+            margin: 20px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #333;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>random</h1>
-        <p>kuk.</p>
-
-        <h2>YouTube URL to MP3 Converter</h2>
-        <input type="text" id="youtubeUrl" placeholder="Enter YouTube URL">
-        <button onclick="convertToMp3()">Convert to MP3</button>
-        <a id="downloadLink" href="#" style="display: none;">Download MP3</a>
-    </div>
-
-    <script>
-        function convertToMp3() {
-            // Get the YouTube URL from the input field
-            var youtubeUrl = document.getElementById("youtubeUrl").value;
-
-            // Perform the conversion logic here
-            // ...
-
-            // Fetch the video title using YouTube Data API
-            fetch(`https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${youtubeUrl}&key=YOUR_API_KEY`)
-                .then(response => response.json())
-                .then(data => {
-                    // Extract the video title from the API response
-                    var videoTitle = data.items[0].snippet.title;
-
-                    // Display the converted MP3 download link
-                    var downloadLink = document.getElementById("downloadLink");
-                    downloadLink.href = "YOUR_CONVERTED_MP3_URL";
-                    downloadLink.style.display = "block";
-                    downloadLink.download = `${videoTitle}.mp3`; // Set the filename for download
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                });
-        }
-    </script>
+    <header>
+        <h1>Welcome to the Student Page</h1>
+    </header>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#subjects">Subjects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <section id="about">
+        <h2>About</h2>
+        <p>This webpage is dedicated to students for sharing resources and information about their studies and activities.</p>
+    </section>
+    <section id="subjects">
+        <h2>Subjects</h2>
+        <ul>
+            <li>Mathematics</li>
+            <li>Science</li>
+            <li>History</li>
+            <li>Art</li>
+            <li>Physical Education</li>
+        </ul>
+    </section>
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>If you have any questions, feel free to <a href="mailto:studentpage@example.com">email us</a>.</p>
+    </section>
+    <footer>
+        <p>&copy; 2024 Student Web Page. All rights reserved.</p>
+    </footer>
 </body>
 </html>
